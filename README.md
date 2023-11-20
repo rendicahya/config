@@ -1,7 +1,7 @@
 Usage:
 
 ```python
-from config import Config
+from python_config import Config
 conf = Config('config.json')
 print(conf.some.value)
 ```
