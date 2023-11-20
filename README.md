@@ -1,3 +1,7 @@
+# Python Config
+
+A simple configuration for Python projects.
+
 Usage:
 
 ```python
