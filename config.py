@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+from assertpy.assertpy import assert_that
+
 class Dict(dict):
     __getattr__ = dict.__getitem__
     __setattr__ = dict.__setitem__
@@ -9,11 +11,9 @@ class Dict(dict):
 
 class Config(object):
     def __new__(cls, path: str):
+        assert_that(path).is_file().is_readable()
+        
         path = Path(path)
-
-        assert path.exists(), "Config file not found."
-        assert path.is_file(), "Config file must be a file."
-        assert path.suffix == ".json", "Config file must be a JSON file."
 
         with open(path, "r") as f:
             result = Config.__load__(json.loads(f.read()))
