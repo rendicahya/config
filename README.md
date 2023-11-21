@@ -2,7 +2,13 @@
 
 A simple configuration for Python projects.
 
-Usage:
+## Installation
+This library is designed to be used as a git submodule:
+```bash
+git submodule add https://github.com/rendicahya/python_config.git
+```
+
+## Usage:
 
 ```python
 from python_config import Config
